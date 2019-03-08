@@ -1,0 +1,44 @@
+@charset "UTF-8";
+
+//图表默认背景色
+$default-bg-color: #282E3C;
+//柱形图默认颜色
+$default-bar-color: #22C3F7;
+//标尺默认颜色
+$default-click-cursor-color: #FB435F;
+//标尺默认透明度
+$default-click-cursor-opacity: 0.6;
+//折线图曲线图默认颜色
+$default-line-color: #22C3F7;
+//折线图曲线图默认填充透明度
+$default-line-fill-opacity: 0.2;
+//折线图曲线图默认颜色
+$default-scatter-color: #22C3F7;
+//折线图曲线图默认填充透明度
+$default-scatter-fill-opacity: 0.6;
+//数据区域控件默认颜色
+$default-data-zoom-color: #B6CCE4;
+//数据区域边框颜色
+$default-data-zoom-border-color: #22C3F7;
+//数据区域操作控件颜色
+$default-data-zoom-bar-color: #22C3F7;
+//数据区域控件默认填充透明度
+$default-data-zoom-fill-opacity: 0.4;
+//悬浮提示背景色
+$default-hover-text-bg-color: rgba(182,204, 228, 0.6);
+//默认坐标轴颜色
+$default-axis-color: #353D52;
+//默认坐标轴网格颜色
+$default-grid-line: #353D52;
+//默认刻度文字颜色
+$default-axis-text: #8691AD;
+//默认地图边缘颜色
+$default-map-border-color: #282E3C;
+//默认背景地图填充颜色
+$default-bg-map-fill-color: #2D3446;
+//默认绘制地图填充颜色
+$default-main-map-fill-color: #353D52;
+//地图散点默认颜色
+$default-main-scatter-color: #22C3F7;
+//地图散点默认透明度
+$default-main-scatter-opacity: 0.5;

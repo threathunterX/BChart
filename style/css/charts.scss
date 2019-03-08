@@ -1,0 +1,328 @@
+@charset "UTF-8";
+
+@import "../sass/var";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  background-color: #232835;
+}
+
+//图标类样式
+.svg-container {
+  position: relative;
+  overflow: hidden;
+  background-color: $default-bg-color;
+  width: 100%;
+  height: 100%;
+  .svg-view, .data-zoom-view {
+    padding: 10px;
+    box-sizing: border-box;
+    overflow: visible;
+    vertical-align: top;
+  }
+  .data-zoom-view {
+    padding-top: 0;
+  }
+  .axis-line, .grid-line {
+    stroke: $default-axis-color;
+  }
+  .text-div {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 120px;
+    display: inline-block;
+  }
+  .x-axis-text {
+    font-size: 10px;
+    text-anchor: middle;
+    text-align: center;
+    fill: $default-axis-text;
+    color: #8691AD;
+    line-height: 11px;
+  }
+  .y-left-axis-text {
+    font-size: 10px;
+    text-anchor: end;
+    text-align: right;
+    fill: $default-axis-text;
+    color: $default-axis-text;
+    line-height: 11px;
+  }
+  .y-right-axis-text {
+    font-size: 10px;
+    text-anchor: start;
+    text-align: left;
+    fill: $default-axis-text;
+    color: $default-axis-text;
+    line-height: 11px;
+  }
+  .text-left {
+    text-anchor: start;
+    text-align: left;
+  }
+  .text-right {
+    text-anchor: end;
+    text-align: right;
+  }
+  .line-circle {
+    fill: #fff;
+    stroke: $default-line-color;
+  }
+  .top-opacity {
+    fill: #fff;
+    opacity: 0.4;
+  }
+  .top-point {
+    fill: #fff;
+  }
+  .top-arrow-left,
+  .top-arrow-right {
+    fill: #FF5E76;
+  }
+  .top-rect {
+    fill: #FF5E76;
+    stroke: #FF5E76;
+  }
+  .top-text-y, .top-text-x {
+    fill: #fff;
+    font-size: 12px;
+  }
+  .top-info-flip {
+    .top-rect,
+    g {
+      transform: translate(-155px, 0);
+    }
+
+    .top-arrow-left,
+    .top-arrow-right {
+      transform: translate(-149px, 0);
+    }
+  }
+  .point-pinch {
+    cursor: pointer;
+    transition: r 0.2s ease;
+    -moz-transition: r 0.2s ease;
+    -webkit-transition: r 0.2s ease;
+    -o-transition: r 0.2s ease;
+  }
+  .line-hover-cursor {
+    fill: $default-data-zoom-color;
+    opacity: $default-data-zoom-fill-opacity;
+    //width: 1px;
+    transform: translate(-0.5px, 0);
+    transition: x 0.2s ease, y 0.2s ease;
+    -moz-transition: x 0.2s ease, y 0.2s ease;
+    -webkit-transition: x 0.2s ease, y 0.2s ease;
+    -o-transition: x 0.2s ease, y 0.2s ease;
+    pointer-events: none;
+  }
+  .chart-cursor {
+    fill: $default-click-cursor-color;
+    opacity: $default-click-cursor-opacity;
+    pointer-events: none;
+  }
+  .hover-cursor {
+    fill: $default-data-zoom-color;
+    opacity: $default-data-zoom-fill-opacity;
+    transition: x 0.2s ease, y 0.2s ease;
+    -moz-transition: x 0.2s ease, y 0.2s ease;
+    -webkit-transition: x 0.2s ease, y 0.2s ease;
+    -o-transition: x 0.2s ease, y 0.2s ease;
+    pointer-events: none;
+  }
+  .hover-text {
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 5px;
+    //opacity: $default-click-cursor-opacity;
+    border-radius: 3px;
+    white-space: nowrap;
+    pointer-events: none;
+    font-size: 12px;
+    z-index: 999;
+    //transition: top 0.2s ease, left 0.2s ease;
+    //-moz-transition: top 0.2s ease, left 0.2s ease;
+    //-webkit-transition: top 0.2s ease, left 0.2s ease;
+    //-o-transition: top 0.2s ease, left 0.2s ease;
+
+    p {
+      line-height: 15px;
+      i {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        border-radius: 5px;
+        margin-right: 5px;
+      }
+    }
+  }
+  .dash {
+    stroke-dasharray: 5, 5;
+  }
+
+  .data-zoom-border {
+    stroke: $default-line-color;
+    stroke-width: 1;
+    fill: none;
+  }
+  .data-zoom-area {
+    stroke: $default-data-zoom-color;
+    stroke-width: 1;
+    fill: $default-data-zoom-color;
+    opacity: $default-data-zoom-fill-opacity;
+  }
+  .data-zoom {
+    transform: translate(-5px, 0);
+    fill: $default-data-zoom-color;
+    opacity: $default-data-zoom-fill-opacity;
+  }
+  .data-zoom-start-bar {
+    transform: translate(-5px, 0);
+    fill: $default-data-zoom-bar-color;
+  }
+  .data-zoom-end-bar {
+    transform: translate(-5px, 0);
+    fill: $default-data-zoom-bar-color;
+  }
+  .data-line {
+    stroke: $default-line-color;
+    stroke-width: 1;
+    fill: none;
+  }
+  .data-area {
+    fill: $default-line-color;
+    pointer-events: none;
+  }
+  .data-bar {
+    cursor: pointer;
+    fill: $default-bar-color;
+  }
+  .data-scatter {
+    fill: $default-scatter-color;
+    opacity: $default-scatter-fill-opacity;
+  }
+  .map-background {
+    stroke: $default-map-border-color;
+    fill: $default-bg-map-fill-color;
+  }
+  .main-map {
+    stroke: $default-map-border-color;
+    fill: $default-main-map-fill-color;
+  }
+  .map-point {
+    .hollow-circle {
+      fill: transparent;
+      stroke: $default-main-scatter-color;
+      stroke-width: 1;
+    }
+    .solid-point {
+      fill: $default-main-scatter-color;
+      opacity: $default-main-scatter-opacity;
+    }
+  }
+  .map-bg {
+    width: 100%;
+    height: 100%;
+    fill: transparent;
+  }
+
+  .percent-value {
+    fill: #B6CCE4;
+    font-size: 24px;
+    height: 24px;
+    transform: translateY(6px);
+  }
+  .pie-text-value {
+    fill: #fff;
+    font-size: 24px;
+    height: 24px;
+    font-weight: bold;
+  }
+  .pie-item-text {
+    fill: #B6CCE4;
+    font-size: 12px;
+    height: 12px;
+  }
+
+  .thread-text-container {
+    fill: #8691AD;
+    font-size: 12px;
+  }
+
+  .progress-container {
+    fill: none;
+    stroke: #525E7F;
+    stroke-width: 3px;
+  }
+
+  .progress-fixed-text {
+    fill: #B6CCE4;
+    font-size: 12px;
+    height: 12px;
+    transform: translateY(5px);
+    font-weight: bold;
+  }
+
+  .bottom-mask {
+    fill: #282E3D;
+    width: 100%;
+    opacity: 0.5;
+  }
+
+  .relations-map-container {
+    path {
+      stroke: #525E7F;
+      cursor: pointer;
+      fill: none;
+    }
+
+    circle {
+      cursor: pointer;
+    }
+  }
+
+  .line-hover-text {
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 12px;
+    border-radius: 3px;
+    white-space: nowrap;
+    pointer-events: none;
+    font-size: 12px;
+    line-height: 18px;
+    z-index: 998;
+
+    .line-hover-title {
+      color: #B6CCE4;
+      padding: 0;
+      margin-bottom: 12px;
+      font-size: 12px;
+      padding-bottom: 8px;
+
+      p {
+        margin-top: 4px;
+        padding-bottom: 12px;
+        font-weight: normal;
+
+        span {
+          display: inline-block;
+          margin-left: 6px;
+          background: #282E3C;
+          border-radius: 18px;
+          padding: 0 10px;
+        }
+      }
+    }
+  }
+}

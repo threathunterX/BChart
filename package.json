@@ -1,0 +1,37 @@
+{
+  "name": "BChart",
+  "version": "1.1.16",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "lint": "eslint src/index.js --fix",
+    "compile": "rm -rf dist && babel src -d dist",
+    "precommit": "echo 'commit'",
+    "install": "npm run compile",
+    "prepublish": "npm run compile"
+  },
+  "keywords": [],
+  "author": "threathunter",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-decorators-legacy": "^1.3.5",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "eslint": "^3.13.1",
+    "eslint-config-airbnb-base": "^11.0.1",
+    "eslint-plugin-import": "^2.2.0",
+    "git-pre-commit": "^2.1.3"
+  },
+  "dependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.24.1",
+    "babel-polyfill": "^6.20.0",
+    "babel-preset-env": "^1.5.1",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "d3": "3.5.17",
+    "lodash": "^4.17.4"
+  }
+}
